@@ -1,0 +1,87 @@
+RTL Netlist  
+  ↓  
+  (High-level digital circuit description written in Verilog or VHDL)
+
+Synthesis  
+  ↓  
+  (Convert RTL to gate-level netlist using logic optimization)
+
+🧮 Key Formula:  
+  **Delay (gate) ≈ f(C_load, V_dd, I_drive)**  
+  - C_load: Load capacitance  
+  - V_dd: Supply voltage  
+  - I_drive: Drive current
+
+Floorplanning  
+  ↓  
+  (Define core area, place I/Os and macros, power grid planning)
+
+📐 Estimation Formula:  
+  **Die Area ≈ ∑(Macro Area + Cell Area + Routing Overhead)**
+
+Placement  
+  ↓  
+  (Place standard cells to optimize timing, congestion, and area)
+
+🧮 Key Concept:  
+  **Total Wirelength ≈ ∑ Manhattan Distance between connected cells**
+
+Clock Tree Synthesis (CTS)  
+  ↓  
+  (Build balanced clock network, reduce skew and insertion delay)
+
+🧮 Key Formulas:  
+  - **Skew = |Arrival time(farthest FF) - Arrival time(nearest FF)|**  
+  - **Insertion Delay = Clock Arrival Time - Clock Source Time**
+
+Routing  
+  ↓  
+  (Connect all nets using available metal layers while respecting DRC)
+
+🧮 RC Delay Estimation:  
+  - **Elmore Delay ≈ R × C_total**  
+  - R: Wire resistance, C_total: total capacitance
+
+Post-Route Optimization & ECOs  
+  ↓  
+  (Fix timing violations, logic changes, incremental placement/routing)
+
+📈 Timing Fix Example:  
+  - Add **buffers** to reduce net delay  
+  - Gate resizing for improving **setup/hold**
+
+Physical Verification  
+  ├─ DRC: (Design Rule Check – ensures layout follows manufacturing rules)  
+  ├─ LVS: (Layout vs Schematic – validates layout matches netlist)  
+  ├─ ERC: (Electrical Rule Check – checks power/ground connectivity)  
+  ├─ Antenna Check: (Prevents charge damage during fabrication)  
+  └─ ESD Analysis: (Validates ESD structures for I/O protection)
+
+Power Integrity Analysis  
+  ├─ IR Drop  
+      - Voltage drop due to resistance in power grid
+
+    🧮 Formula:  
+    **V_drop = I × R**  
+    - I: Current, R: Resistance of power path
+
+  └─ EM Analysis (Electromigration)  
+      - Checks if current density causes metal degradation
+
+    🧮 EM Current Density:  
+    **J = I / A**  
+    - J: Current Density, A: Cross-sectional area
+
+Timing Signoff (STA)  
+  ↓  
+  (Static Timing Analysis checks timing across all paths)
+
+🧮 Setup and Hold Slack:  
+- **Setup Slack = Data Arrival - Required Time**  
+- **Hold Slack = Data Arrival - Earliest Latching Time**
+
+🧮 Worst Negative Slack (WNS) and Total Negative Slack (TNS)
+
+GDSII Generation (Tapeout)  
+  ↓  
+  (Final layout database sent to foundry for mask generation)
