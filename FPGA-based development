@@ -1,0 +1,51 @@
+🔷 Step-by-Step Process:
+Download PYNQ Image:
+
+Get latest .img file from PYNQ GitHub or website
+
+Burn to microSD Card:
+
+Use software like Balena Etcher to write image to microSD
+
+Insert microSD and Boot:
+
+Insert into PYNQ board
+
+Power via micro-USB or external supply
+
+Connect to Board:
+
+Default IP: 192.168.2.99
+
+Open browser → Visit: http://192.168.2.99:9090
+
+Use credentials: xilinx / xilinx
+
+Access Jupyter Notebook:
+
+Create or open notebooks to write Python code
+
+Load Overlay:
+
+Load pre-built or custom bitstreams
+
+python
+Copy
+Edit
+from pynq import Overlay
+ol = Overlay('base.bit')
+Control Hardware:
+
+Access GPIOs, LEDs, buttons using Python
+
+Transfer Custom Overlays:
+
+Use SSH or drag-and-drop in Jupyter
+
+Install Python Libraries (optional):
+
+Install extra packages via pip or conda
+
+Start Development:
+
+Use Python to interface with IP cores, develop applications
