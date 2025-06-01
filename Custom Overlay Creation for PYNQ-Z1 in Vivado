@@ -1,0 +1,53 @@
+ Custom Overlay Creation for PYNQ-Z1 in Vivado
+Start
+  │
+  ▼
+Install Vivado & PYNQ-Z1 Board Files
+  │
+  ▼
+Launch Vivado → Create New Project
+  │
+  ▼
+Select PYNQ-Z1 Board
+  │
+  ▼
+Create Block Design (IP Integrator)
+  │
+  ▼
+Add ZYNQ7 Processing System
+  │
+  ▼
+Run Block Automation → Apply Default PS Settings
+  │
+  ▼
+Add IP Blocks (AXI GPIO ×3, AXI BRAM Controller)
+  │
+  ▼
+Rename Blocks (e.g., leds, buttons, switches, bram)
+  │
+  ▼
+Run Connection Automation
+  │
+  ▼
+Verify Connections (GPIO ↔ LEDs, Buttons, Switches)
+  │
+  ▼
+Create HDL Wrapper from Block Design
+  │
+  ▼
+Run Synthesis → Implementation → Bitstream Generation
+  │
+  ▼
+Export:
+  • Block Design (.tcl)
+  • Bitstream (.bit)
+  • Hardware Description (.hwh)
+  │
+  ▼
+Transfer Files to PYNQ-Z1 via SSH or File Transfer
+  │
+  ▼
+Use Python (PYNQ API) to Control Custom Overlay
+  │
+  ▼
+End
